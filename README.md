@@ -6,4 +6,4 @@ _The project is inteded to be written in python and use [typer](https://typer.ti
 
 __Apps to be implemented__
  - [ ] Telegram
- - [ ] Matrix
+ - [ ] [Matrix](https://matrix.org/sdks/) [git](https://github.com/poljar/matrix-nio)
