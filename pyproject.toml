@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "plxshare"
+version = "0.1.0"
+description = "A CLI tool to share your currently playing media on plex with your friends on Telegram and Matrix."
+authors = ["Your Name <you@example.com>"]
+license = "GNU v3"
+readme = "README.md"
+
+[tool.poetry.scripts]
+plxshare = "plxshare.main:app"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+typer = {extras = ["all"], version = "^0.7.0"}
+plexapi = "^4.13.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
