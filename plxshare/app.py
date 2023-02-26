@@ -12,7 +12,7 @@ plex = Plex()
 
 @app.command()
 def login(service: Services):
-
+    """Log in to one of the services."""
     if service == Services.Plex:
         print("Plex")
         plex.login()
@@ -21,7 +21,9 @@ def login(service: Services):
 @app.callback()
 def callback():
     """
-    Awesome Portal Gun
+    This application allows you to query your currently playing media
+    and to send i as a sosial message to a friend
+    on one of the supported platforms.
     """
 
 
@@ -32,15 +34,3 @@ def current_track():
     """
     typer.echo("Playing ...")
     typer.echo(plex.current_track())
-
-@app.command()
-def load():
-    """
-    Load the portal gun
-    """
-    typer.echo("Loading portal gun")
-
-
-@app.command()
-def shootme(name:str):
-    print(f'{name} has been shot')
