@@ -1,6 +1,8 @@
 import typer
-from .config import Plex
 from enum import Enum
+
+from .plex import Plex
+from .telegram import Telegram
 
 class Services(Enum):
     Plex = "plex"
@@ -9,6 +11,7 @@ class Services(Enum):
 
 app = typer.Typer()
 plex = Plex()
+telegram = Telegram()
 
 @app.command()
 def login(service: Services):
@@ -16,6 +19,8 @@ def login(service: Services):
     if service == Services.Plex:
         print("Plex")
         plex.login()
+    if service == Services.Telegram:
+        telegram.login()
 
 
 @app.callback()
@@ -34,3 +39,11 @@ def current_track():
     """
     typer.echo("Playing ...")
     typer.echo(plex.current_track())
+
+@app.command()
+def send():
+    """
+    Send the currently playing track
+    """
+    message = plex.current_track()
+    telegram.send_message("me", message)

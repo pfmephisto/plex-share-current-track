@@ -5,7 +5,7 @@ from plexapi.server import PlexServer
 from typing import Union
  # from functools import partial
 
-CONFIG_PATH = full_path = os.path.expanduser("~/.config/plxshare.conf")
+CONFIG_PATH = os.path.expanduser("~/.config/plexshare/plex.conf")
 
 
 class Plex():
