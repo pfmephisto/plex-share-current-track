@@ -4,6 +4,8 @@ from enum import Enum
 
 class Services(Enum):
     Plex = "plex"
+    Telegram = "telegram"
+    Matrix = "matrix"
 
 app = typer.Typer()
 plex = Plex()
@@ -24,12 +26,12 @@ def callback():
 
 
 @app.command()
-def shoot():
+def current_track():
     """
-    Shoot the portal gun
+    This prints the current track that is being played.
     """
-    typer.echo("Shooting portal gun")
-
+    typer.echo("Playing ...")
+    typer.echo(plex.current_track())
 
 @app.command()
 def load():
